@@ -19,6 +19,6 @@ pipeline {
     sh 'docker run gesellix/trufflehog --json https://github.com/sindhuhack/Devsecops.git > trufflehog'
     sh 'cat trufflehog'
    }
-    })
+      }}
   }
 }
