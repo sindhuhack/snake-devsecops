@@ -12,19 +12,19 @@ pipeline {
             ''' 
       }
     }
-      stage ('Check-Git-Secrets') {
-   steps {
-    sh 'sudo su'
-    sh 'rm trufflehog || true'
-    sh 'sudo docker run gesellix/trufflehog --json https://github.com/sindhuhack/snakegame-yoga.git > trufflehog'
-    sh 'cat trufflehog'
-   }
-      }
+//      stage ('Check-Git-Secrets') {
+  // steps {
+    //sh 'sudo su'
+    //sh 'rm trufflehog || true'
+    //sh 'sudo docker run gesellix/trufflehog --json https://github.com/sindhuhack/snakegame-yoga.git > trufflehog'
+    //sh 'cat trufflehog'
+   //}
+     // }
     
         stage ('Source Composition Analysis') {
       steps {
          sh 'rm owasp* || true'
-         sh 'https://github.com/sindhuhack/snakegame-yoga/master/owasp-dependency-check.sh '
+         sh 'wget "https://github.com/sindhuhack/snakegame-yoga/master/owasp-dependency-check.sh" '
          sh 'chmod +x owasp-dependency-check.sh'
          sh 'bash owasp-dependency-check.sh'
          sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
