@@ -15,7 +15,7 @@ pipeline {
       stage ('Check-Git-Secrets') {
    steps {
     sh 'sudo rm trufflehog || true'
-    sh 'sudo docker run gesellix/trufflehog --json https://github.com/sindhuhack/snakegame-yoga.git > trufflehog'
+    sh 'sudo -S docker run gesellix/trufflehog --json https://github.com/sindhuhack/snakegame-yoga.git > trufflehog'
     sh 'sudo cat trufflehog'
    }
       }
