@@ -20,6 +20,12 @@ pipeline {
     //sh 'cat trufflehog'
    //}
      // }
+         stage ('Nmap') {
+      steps {
+         sh 'docker run instrumentisto/nmap -A -T4 3.234.189.32 > nmapresult'
+        sh 'cat nmapresult'
+      }
+         }
     
         stage ('Source Composition Analysis') {
       steps {
