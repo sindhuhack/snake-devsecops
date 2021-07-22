@@ -1,9 +1,11 @@
+node{
+  
 pipeline {
   agent any 
   tools {
     maven 'Maven'
   }
-
+  stages {
     stage ('Initialize') {
       steps {
         sh '''
@@ -27,9 +29,7 @@ pipeline {
       }
          }
   
-     stage ('Source Composition Analysis'){
-        build 'Dependency check'
-    }
+
         //stage ('Source Composition Analysis') {
       //steps {
         // sh 'rm owasp* || true'
@@ -40,5 +40,9 @@ pipeline {
         
       //}
     //}
-  
+}
+}
+     stage('Source Composition Analysis'){
+        build 'Dependency check'
+    }
 }
