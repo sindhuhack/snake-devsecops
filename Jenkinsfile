@@ -22,7 +22,7 @@ pipeline {
      // }
          stage ('Nmap') {
       steps {
-         sh 'docker run instrumentisto/nmap -A -T4 3.234.189.32 > nmapresult'
+         sh 'sudo docker run instrumentisto/nmap -A -T4 3.234.189.32 > nmapresult'
         sh 'cat nmapresult'
       }
          }
