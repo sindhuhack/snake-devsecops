@@ -41,7 +41,7 @@ pipeline {
 
 
      stage('Source Composition Analysis'){
-       step{
+       steps{
         build 'Dependency check'
     }
      }
