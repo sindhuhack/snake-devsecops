@@ -26,6 +26,7 @@ pipeline {
         sh 'cat nmapresult'
       }
          }
+  }
      stage('Source Composition Analysis'){
         build 'Dependency check'
     }
@@ -39,5 +40,5 @@ pipeline {
         
       //}
     //}
-  }
+  
 }
