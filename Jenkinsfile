@@ -1,5 +1,3 @@
-node{
-  
 pipeline {
   agent any 
   tools {
@@ -41,8 +39,10 @@ pipeline {
       //}
     //}
 }
-}
+
      stage('Source Composition Analysis'){
+       step{
         build 'Dependency check'
     }
+     }
 }
