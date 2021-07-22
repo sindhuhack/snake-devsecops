@@ -3,7 +3,7 @@ pipeline {
   tools {
     maven 'Maven'
   }
-  stages {
+
     stage ('Initialize') {
       steps {
         sh '''
@@ -26,8 +26,8 @@ pipeline {
         sh 'cat nmapresult'
       }
          }
-  }
-     stage('Source Composition Analysis'){
+  
+     stage ('Source Composition Analysis'){
         build 'Dependency check'
     }
         //stage ('Source Composition Analysis') {
