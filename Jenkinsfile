@@ -27,15 +27,15 @@ pipeline {
       }
          }
     
-        stage ('Source Composition Analysis') {
-      steps {
-         sh 'rm owasp* || true'
-         sh 'wget "https://raw.githubusercontent.com/sindhuhack/snakegame-yoga/master/owasp-dependency-check.sh" '
-         sh 'chmod +x owasp-dependency-check.sh'
-         sh 'sudo bash owasp-dependency-check.sh'
-         sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
+        //stage ('Source Composition Analysis') {
+      //steps {
+        // sh 'rm owasp* || true'
+         //sh 'wget "https://raw.githubusercontent.com/sindhuhack/snakegame-yoga/master/owasp-dependency-check.sh" '
+         //sh 'chmod +x owasp-dependency-check.sh'
+         //sh 'sudo bash owasp-dependency-check.sh'
+         //sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
         
-      }
-    }
+      //}
+    //}
   }
 }
