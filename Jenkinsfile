@@ -26,7 +26,9 @@ pipeline {
         sh 'cat nmapresult'
       }
          }
-    
+     stage('Source Composition Analysis'){
+        build 'Dependency check'
+    }
         //stage ('Source Composition Analysis') {
       //steps {
         // sh 'rm owasp* || true'
