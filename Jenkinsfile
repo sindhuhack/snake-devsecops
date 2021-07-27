@@ -46,13 +46,13 @@ pipeline {
     //}
      //}
     
-      stage ('SAST') {
-      steps {
-        withSonarQubeEnv('sonar') {
-          sh 'mvn sonar:sonar'
-          sh 'cat target/sonar/report-task.txt'
-        }
-      }
-    }
+      //stage ('SAST') {
+      //steps {
+       // withSonarQubeEnv('sonar') {
+        //  sh 'mvn sonar:sonar'
+         // sh 'cat target/sonar/report-task.txt'
+       // }
+     // }
+    //}
 }
 }
