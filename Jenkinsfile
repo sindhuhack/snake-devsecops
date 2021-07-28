@@ -12,20 +12,20 @@ pipeline {
             ''' 
       }
     }
- //   stage ('Check-Git-Secrets') {
-  //steps {
-    //sh 'sudo su'
-    //sh 'rm trufflehog || true'
-    //sh 'sudo docker run gesellix/trufflehog --json https://github.com/sindhuhack/snakegame-yoga.git > trufflehog'
-    //sh 'cat trufflehog'
-   //}
-     //}
-       //  stage ('Nmap') {
-      //steps {
-        // sh 'sudo docker run instrumentisto/nmap -A -T4 192.168.1.1 > nmapresult'
-        //sh 'cat nmapresult'
-      //}
-        // }
+   stage ('Check-Git-Secrets') {
+  steps {
+    sh 'sudo su'
+    sh 'rm trufflehog || true'
+    sh 'sudo docker run gesellix/trufflehog --json https://github.com/sindhuhack/snakegame-yoga.git > trufflehog'
+    sh 'cat trufflehog'
+   }
+     }
+         stage ('Nmap') {
+      steps {
+        sh 'sudo docker run instrumentisto/nmap -A -T4 192.168.1.1 > nmapresult'
+        sh 'cat nmapresult'
+      }
+         }
   
 
         //stage ('Source Composition Analysis') {
@@ -40,11 +40,17 @@ pipeline {
     //}
 
 
-     //stage('Source Composition Analysis'){
-       //steps{
-        //build 'Dependency check'
-    //}
-     //}
+     stage('Source Composition Analysis'){
+       steps{
+       build 'Dependency check'
+    }
+     }
+    
+      stage('SAST'){
+       steps{
+       build 'SAST'
+    }
+     }
     
       //stage ('SAST') {
       //steps {
