@@ -5,9 +5,7 @@ node ('Appserver-agent'){
        checkout scm
     }
     stage('Source Composition Analysis'){
-       steps{
        build 'SCA-OWASP-Dependency-Check'
-    }
      }	
  
     stage('Build-and-Tag') {
